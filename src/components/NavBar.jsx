@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../styles/NavBar.css";
 
 const NavBar = (props) => {
   const categoryArr = [
@@ -22,11 +23,13 @@ const NavBar = (props) => {
   return (
     <>
       <div id="dropdown">
-        <ul id="drop">
-          Categories:
-          {categoryArr.map((name, i) => (
-            <li key={i}>{name} </li>
-          ))}
+        <ul id="drop-ul">
+          &#10507; Categories:
+          <div id="dropdown-content">
+            {categoryArr.map((name, i) => (
+              <li key={i}>{name} </li>
+            ))}
+          </div>
         </ul>
       </div>
     </>
