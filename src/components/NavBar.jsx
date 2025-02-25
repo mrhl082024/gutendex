@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/NavBar.css";
 
-const NavBar = (props) => {
+const NavBar = () => {
   const categoryArr = [
     "Fiction",
     "Mystery",

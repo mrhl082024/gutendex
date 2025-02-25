@@ -30,8 +30,8 @@ const MainPage = () => {
 
   return (
     <>
-      <Header data={data} />
-      <Body data={data} />
+      <Header />
+      <Body />
     </>
   );
 };
