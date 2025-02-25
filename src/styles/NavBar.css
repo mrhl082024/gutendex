@@ -3,7 +3,6 @@
   width: fit-content;
   font-size: 30px;
   margin: 10px;
-  z-index: 1;
 }
 #drop-ul {
   transition: 0.1s;
@@ -13,6 +12,7 @@
 }
 #dropdown-content {
   display: none;
+  position: absolute;
 }
 #dropdown:hover #dropdown-content {
   display: block;

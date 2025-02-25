@@ -11,6 +11,7 @@ const Header = (props) => {
         <input id="search-field" type="text" placeholder="Search" />
         <NavBar />
       </div>
+      <p>test</p>
     </>
   );
 };
