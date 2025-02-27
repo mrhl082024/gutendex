@@ -1,8 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../styles/NavBar.css";
+import ShowBooks from "./ShowBooks.jsx";
 
 const NavBar = () => {
+  const history = useHistory();
+  const testdata = {
+    title: "test tittel",
+    age: "test-age",
+  };
+  const yippi = () => {
+    history.push({ pathname: "/ShowBooks", state: testdata });
+  };
+
   const categoryArr = [
     "Fiction",
     "Mystery",
@@ -24,10 +34,6 @@ const NavBar = () => {
   const [error, setError] = useState([null]);
   const [query, setQuery] = useState("");
 
-  function yipp(e) {
-    setQuery(e.target.value.toLowerCase());
-  }
-
   console.log(data);
   useEffect(() => {
     if (query !== "")
@@ -44,9 +50,9 @@ const NavBar = () => {
           &#10507; Categories:
           <ul id="drop-ul">
             {categoryArr.map((name, i) => (
-              <li key={i}>
-                <button value={name} onClick={yipp}>
-                  {name}
+              <li id="dropdown-content" key={i}>
+                <button id="dropdown-btn" value={name} onClick={yippi}>
+                  {/* <Link to={<ShowBooks />}>{name}</Link> */}
                 </button>
               </li>
             ))}

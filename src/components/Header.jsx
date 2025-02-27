@@ -12,7 +12,6 @@ const Header = () => {
         <SearchBar />
         <NavBar />
       </div>
-      <p>test</p>
     </>
   );
 };
