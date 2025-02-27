@@ -1,4 +1,5 @@
-export default function SearchBar(props) {
+import "../styles/SearchBar.css";
+export default function SearchBar() {
   return (
     <>
       <div id="searchbar-card">

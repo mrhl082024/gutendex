@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import "../styles/NavBar.css";
 
-const NavBar = (props) => {
+const NavBar = () => {
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState([true]);
   const [error, setError] = useState([null]);
 
@@ -30,6 +31,7 @@ const NavBar = (props) => {
         `https://gutendex.com//books?topic=${category}`
       );
       const result = await response.json();
+      setData(result);
       if (!response.ok) {
         throw new Error(`HTTP Error. Status ${response.status}`);
       }
@@ -42,16 +44,20 @@ const NavBar = (props) => {
 
   return (
     <>
-      <div id="dropdown">
-        <ul id="drop-ul">
-          &#10507; Categories:
-          <div id="dropdown-content">
-            {categoryArr.map((name, i) => (
-              <li key={i}>{name} </li>
-            ))}
-          </div>
-        </ul>
-      </div>
+      <section>
+        <div id="dropdown">
+          <ul id="drop-ul">
+            &#10507; Categories:
+            <div id="dropdown-content">
+              {categoryArr.map((name, i) => (
+                <button id="category-btn" key={i}>
+                  {name}
+                </button>
+              ))}
+            </div>
+          </ul>
+        </div>
+      </section>
     </>
   );
 };

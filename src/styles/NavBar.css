@@ -22,13 +22,13 @@
   text-align: center;
   list-style-type: none;
 }
-li {
+#category-btn {
   height: 30px;
   width: 120px;
   font-size: 20px;
   transition: 0.1s;
 }
-li:hover {
+#category-btn:hover {
   transform: scale(1.2);
   border: 1px solid black;
   background-color: rgb(60, 60, 60);
