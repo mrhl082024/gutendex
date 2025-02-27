@@ -1,0 +1,9 @@
+#search-field {
+  height: 40px;
+  width: 450px;
+  border: 2px solid black;
+  border-radius: 8px;
+  text-align: center;
+  background-color: RGB(80, 80, 80);
+  margin: 1rem 0 1rem 0;
+}

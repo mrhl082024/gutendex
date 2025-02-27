@@ -1,4 +1,5 @@
-import NavBar from "./NavBar";
+import NavBar from "./NavBar.jsx";
+import SearchBar from "./SearchBar.jsx";
 import "../styles/Header.css";
 
 const Header = (props) => {
@@ -6,9 +7,9 @@ const Header = (props) => {
 
   return (
     <>
-      <div id="navbar-card">
+      <div id="header-card">
         <h2 id="header-title">Gutendex Book Library</h2>
-        <input id="search-field" type="text" placeholder="Search" />
+        <SearchBar />
         <NavBar />
       </div>
       <p>test</p>
