@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/App.css";
-import MainPage from "./components/HomePage.jsx";
-import Body from "./components/Body.jsx";
+import HomePage from "./components/HomePage.jsx";
 import ShowBooks from "./components/ShowBooks.jsx";
 import Header from "./components/Header.jsx";
 

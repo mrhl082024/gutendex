@@ -1,13 +1,6 @@
 import { useLocation } from "react-router-dom";
 
 const ShowBooks = (props) => {
-  // const location = useLocation();
-  // const data = location.state;
-  // console.log(data);
-  const location = useLocation();
-  const data = location.state;
-  console.log(data);
-
   return (
     <>
       <div id="ShowBooks-card">
