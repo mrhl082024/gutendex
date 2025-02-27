@@ -7,14 +7,14 @@
 #drop-ul {
   transition: 0.1s;
 }
-#drop-ul:hover {
+/* #drop-ul:hover {
   transform: scale(1.01);
-}
-#dropdown-content {
+} */
+#drop-ul {
   display: none;
   position: absolute;
 }
-#dropdown:hover #dropdown-content {
+#dropdown:hover #drop-ul {
   display: block;
   display: flex;
   flex-direction: column;

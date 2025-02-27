@@ -1,12 +1,8 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/NavBar.css";
 
 const NavBar = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState([true]);
-  const [error, setError] = useState([null]);
-
   const categoryArr = [
     "Fiction",
     "Mystery",
@@ -23,43 +19,41 @@ const NavBar = () => {
     "Philosophy",
   ];
 
-  async function getBooksCategory(category) {
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await fetch(
-        `https://gutendex.com//books?topic=${category}`
-      );
-      const result = await response.json();
-      setData(result);
-      if (!response.ok) {
-        throw new Error(`HTTP Error. Status ${response.status}`);
-      }
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
-    }
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState([true]);
+  const [error, setError] = useState([null]);
+  const [query, setQuery] = useState("");
+
+  function yipp(e) {
+    setQuery(e.target.value.toLowerCase());
   }
+
+  console.log(data);
+  useEffect(() => {
+    if (query !== "")
+      fetch(`https://gutendex.com/books?topic=${query}`)
+        .then((res) => res.json())
+        .then((res) => setData(res.results))
+        .catch((err) => setError(error.message));
+  }, [query]);
 
   return (
     <>
       <section>
         <div id="dropdown">
+          &#10507; Categories:
           <ul id="drop-ul">
-            &#10507; Categories:
-            <div id="dropdown-content">
-              {categoryArr.map((name, i) => (
-                <button id="category-btn" key={i}>
+            {categoryArr.map((name, i) => (
+              <li key={i}>
+                <button value={name} onClick={yipp}>
                   {name}
                 </button>
-              ))}
-            </div>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
     </>
   );
 };
-
 export default NavBar;

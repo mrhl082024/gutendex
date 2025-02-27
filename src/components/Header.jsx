@@ -2,7 +2,7 @@ import NavBar from "./NavBar.jsx";
 import SearchBar from "./SearchBar.jsx";
 import "../styles/Header.css";
 
-const Header = (props) => {
+const Header = () => {
   // const data = props.data.results;
 
   return (
