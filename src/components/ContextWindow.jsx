@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 
 export const Context = createContext();
 
-export const ContextWindow = (children) => {
+export const ContextWindow = ({ children }) => {
   const [category, setCategory] = useState();
   const [error, setError] = useState(null);
   const [data, setData] = useState();
@@ -15,6 +15,7 @@ export const ContextWindow = (children) => {
       const result = await response.json();
       setData(result);
       console.log(result);
+      console.log("DATA");
     } catch (err) {
       setError(err);
     }
@@ -23,6 +24,8 @@ export const ContextWindow = (children) => {
     if (category === "" || category === undefined) return;
     fetchData();
   }, [category]);
+
+  function runFunc() {}
 
   return (
     <Context.Provider value={{ setCategory, error, data, fetchData }}>

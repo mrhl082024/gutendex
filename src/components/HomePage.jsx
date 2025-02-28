@@ -1,9 +1,7 @@
-import Header from "./Header.jsx";
-
 const MainPage = () => {
   return (
     <>
-      <p>test</p>
+      <p>test nothing works anymore, this is a cry for help</p>
     </>
   );
 };

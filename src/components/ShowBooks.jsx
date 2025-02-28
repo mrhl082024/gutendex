@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useLocation } from "react-router-dom";
 import { Context } from "./ContextWindow";
 
 const ShowBooks = (props) => {
@@ -22,7 +21,7 @@ const ShowBooks = (props) => {
               </div>
             </>
           ))}
-      <button onClick={() => setCategory("fiction")}>fetch some data</button>
+      {/* <button onClick={() => setCategory("fiction")}>fetch some data</button> */}
     </>
   );
 };

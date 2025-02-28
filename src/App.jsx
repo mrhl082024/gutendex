@@ -2,20 +2,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/App.css";
 import HomePage from "./components/HomePage.jsx";
 import ShowBooks from "./components/ShowBooks.jsx";
-import Header from "./components/Header.jsx";
+import NavigationBar from "./components/NavigationBar.jsx";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Header />} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<NavigationBar />}>
           <Route index element={<HomePage />} />
           <Route path="Showbooks" element={<ShowBooks />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
