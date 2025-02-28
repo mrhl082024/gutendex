@@ -24,10 +24,18 @@
   width: 120px;
   font-size: 20px;
   transition: 0.1s;
+  list-style-type: none;
 }
 #dropdown-btn:hover {
   transform: scale(1.2);
   border: 1px solid black;
   background-color: rgb(60, 60, 60);
   border-radius: 6px;
+}
+#dropdown-content {
+  list-style-type: none;
+}
+#dropdown-name {
+  text-decoration: none;
+  background: none;
 }

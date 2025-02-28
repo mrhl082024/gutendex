@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import "../styles/NavBar.css";
+import "../styles/NavigationBar.css";
 import { Context } from "./ContextWindow";
 import { useContext } from "react";
 
@@ -24,6 +24,12 @@ const NavBar = () => {
 
   return (
     <div id="navigationbar-card">
+      <h1 id="title">Gutendex</h1>
+      <input
+        id="search-field"
+        type="search"
+        placeholder="Search Author or Book name"
+      />
       <section>
         <div id="dropdown">
           &#10507; Categories:
@@ -39,7 +45,9 @@ const NavBar = () => {
                     console.log("TRYKK");
                   }}
                 >
-                  <Link to="/ShowBooks">{name}</Link>
+                  <Link id="dropdown-name" to="/ShowBooks">
+                    {name}
+                  </Link>
                 </button>
               </li>
             ))}
