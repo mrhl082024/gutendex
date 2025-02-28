@@ -4,11 +4,6 @@ import "../styles/NavBar.css";
 import ShowBooks from "./ShowBooks.jsx";
 
 const NavBar = () => {
-  const testObj = {
-    name: "Lars",
-    age: 25,
-  };
-
   const categoryArr = [
     "Fiction",
     "Mystery",
@@ -24,16 +19,6 @@ const NavBar = () => {
     "War",
     "Philosophy",
   ];
-
-  const [data, setData] = useState();
-  const [error, setError] = useState([null]);
-  const [category, setCategory] = useState("");
-
-  useEffect(async () => {
-    const req = await fetch(`https://gutendex.com/books?topic=${category}`);
-    const res = await req.json();
-    setData(res);
-  }, []);
 
   return (
     <>

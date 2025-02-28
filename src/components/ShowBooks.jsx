@@ -1,23 +1,28 @@
+import { useContext } from "react";
 import { useLocation } from "react-router-dom";
+import { Context } from "./ContextWindow";
 
 const ShowBooks = (props) => {
+  const { setCategory, error, data, fetchData } = useContext(Context);
+
   return (
     <>
-      <div id="ShowBooks-card">
-        <section>
-          <h2>book title</h2>
-          {/* <img src="" alt="" /> */}
-          <p>authors</p>
-          <p>bookshelves</p>
-          <p>subject</p>
-          <p>download count</p>
-          <p>languages</p>
-          <p>media type</p>
-        </section>
-        <section>
-          <p>summary</p>
-        </section>
-      </div>
+      {data === null || data === undefined
+        ? null
+        : data.results.map((book) => (
+            <>
+              <div id="showbook-card">
+                <p>{book.title} </p>
+                {book.authors.map((author) => (
+                  <p>{author.name} </p>
+                ))}
+                {book.summaries.map((sum) => (
+                  <p>{sum} </p>
+                ))}
+              </div>
+            </>
+          ))}
+      <button onClick={() => setCategory("fiction")}>fetch some data</button>
     </>
   );
 };
