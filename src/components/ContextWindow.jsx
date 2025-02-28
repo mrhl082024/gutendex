@@ -6,6 +6,7 @@ export const ContextWindow = ({ children }) => {
   const [category, setCategory] = useState();
   const [error, setError] = useState(null);
   const [data, setData] = useState();
+  const [loading, setLoading] = useState(false);
 
   const fetchData = async () => {
     try {
@@ -16,6 +17,7 @@ export const ContextWindow = ({ children }) => {
       setData(result);
       console.log(result);
       console.log("DATA");
+      setLoading(false);
     } catch (err) {
       setError(err);
     }
@@ -28,7 +30,17 @@ export const ContextWindow = ({ children }) => {
   function runFunc() {}
 
   return (
-    <Context.Provider value={{ setCategory, error, data, fetchData }}>
+    <Context.Provider
+      value={{
+        setCategory,
+        error,
+        data,
+        setData,
+        fetchData,
+        loading,
+        setLoading,
+      }}
+    >
       {children}
     </Context.Provider>
   );

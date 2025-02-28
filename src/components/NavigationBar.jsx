@@ -20,11 +20,18 @@ const NavBar = () => {
     "Philosophy",
   ];
 
-  const { setCategory, error, data, fetchData } = useContext(Context);
+  function clearContent() {
+    setData(null);
+  }
+
+  const { setCategory, error, data, setData, fetchData, loading, setLoading } =
+    useContext(Context);
 
   return (
     <div id="navigationbar-card">
-      <h1 id="title">Gutendex</h1>
+      <h1 id="title" onClick={() => setData(null)}>
+        Gutendex
+      </h1>
       <input
         id="search-field"
         type="search"
@@ -40,6 +47,8 @@ const NavBar = () => {
                   id="dropdown-btn"
                   value={name}
                   onClick={() => {
+                    setLoading(true);
+                    setData(null);
                     setCategory(name);
                     fetchData();
                     console.log("TRYKK");

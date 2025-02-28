@@ -2,17 +2,18 @@ import { useContext } from "react";
 import { Context } from "./ContextWindow";
 
 const ShowBooks = () => {
-  const { setCategory, error, data, fetchData } = useContext(Context);
+  const { setCategory, error, data, fetchData, loading } = useContext(Context);
 
   return (
     <>
       <div id="showbooks-card">
+        {loading === true ? <p>Loading...</p> : null}
         {data === null || data === undefined
           ? null
-          : data.results.map((book, i) => (
+          : data.results.map((book) => (
               <>
-                <div id="showbook-card" key={i}>
-                  <p key={i}>{book.title} </p>
+                <div id="showbook-card">
+                  <p>{book.title} </p>
                   {book.authors.map((author) => (
                     <p>{author.name} </p>
                   ))}
