@@ -27,15 +27,13 @@ const NavBar = () => {
 
   const [data, setData] = useState();
   const [error, setError] = useState([null]);
-  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState("");
 
-  useEffect(() => {
-    if (query !== "")
-      fetch(`https://gutendex.com/books?topic=${query}`)
-        .then((res) => res.json())
-        .then((res) => setData(res.results))
-        .catch((err) => setError(error.message));
-  }, [query]);
+  useEffect(async () => {
+    const req = await fetch(`https://gutendex.com/books?topic=${category}`);
+    const res = await req.json();
+    setData(res);
+  }, []);
 
   return (
     <>
