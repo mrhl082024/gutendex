@@ -22,10 +22,11 @@ const NavBar = () => {
 
   function clearContent() {
     setData(null);
+    setType(null);
     setValue(null);
+    console.log("cleared content");
   }
-
-  const { setValue, error, data, setData, fetchData, loading, setLoading } =
+  const { setValue, setData, fetchData, setType, setLoading } =
     useContext(Context);
 
   return (
@@ -43,7 +44,10 @@ const NavBar = () => {
           id="search-btn"
           onClick={() => {
             clearContent();
-            searchBook();
+            setLoading(true);
+            setType("search");
+            setValue(searchField.value);
+            fetchData();
             console.log("TRYKK");
           }}
         >
@@ -60,8 +64,9 @@ const NavBar = () => {
                   id="dropdown-btn"
                   value={name}
                   onClick={() => {
+                    clearContent();
                     setLoading(true);
-                    setData(null);
+                    setType("topic");
                     setValue(name);
                     fetchData();
                     // console.log("TRYKK");

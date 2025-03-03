@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Context } from "./ContextWindow";
 
 const ShowBooks = () => {
-  const { setCategory, error, data, fetchData, loading } = useContext(Context);
+  const { data, loading } = useContext(Context);
 
   return (
     <>

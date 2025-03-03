@@ -6,38 +6,37 @@ export const ContextWindow = ({ children }) => {
   const [value, setValue] = useState();
   const [error, setError] = useState(null);
   const [data, setData] = useState();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(null);
   const [type, setType] = useState(null);
 
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `https://gutendex.com/books?${type}=${value}`
+        `https://gutendex.com/books?${type}=${value.replace(" ", "%20")}`
       );
+      console.log(response);
+
       const result = await response.json();
       setData(result);
       console.log(result);
       console.log("DATA");
-      setLoading(false);
+      setLoading(null);
     } catch (err) {
       setError(err);
     }
   };
   useEffect(() => {
-    if (type === "" || type === undefined) return;
     if (value === "" || value === undefined) return;
     fetchData();
-  }, [type, value]);
+  }, [value]);
 
   return (
     <Context.Provider
       value={{
         setValue,
-        error,
-        data,
+        setType,
         setData,
         fetchData,
-        loading,
         setLoading,
       }}
     >
