@@ -38,12 +38,12 @@ const Book = () => {
                   />
                 </section>
                 <section>
-                  <ul>
+                  <ul id="categories">
                     {book.bookshelves.map((category) => {
                       <li>{category}</li>;
                     })}
                   </ul>
-                  <ul>
+                  <ul id="authors">
                     {book.authors.map((author) => {
                       <li>{author}</li>;
                     })}
