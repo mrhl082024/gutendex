@@ -2,12 +2,34 @@ import { useContext } from "react";
 import { Context } from "./ContextWindow";
 
 const ShowBooks = () => {
-  const { data, loading } = useContext(Context);
+  const { data, loading, page, setPage } = useContext(Context);
 
   return (
     <>
       <div id="showbooks-card">
         {loading === true ? <p>Loading...</p> : null}
+        {data === null || data === undefined ? null : (
+          <span id="btn-card">
+            <button
+              id="prev-page"
+              onClick={() => {
+                setPage(page - 1);
+              }}
+            >
+              Prev
+            </button>
+            <p id="page-counter">{page} </p>
+            <button
+              id="next-page"
+              onClick={() => {
+                setPage(page + 1);
+              }}
+            >
+              Next
+            </button>
+          </span>
+        )}
+
         {data === null || data === undefined
           ? null
           : data.results.map((book) => (

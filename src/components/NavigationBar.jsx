@@ -22,8 +22,8 @@ const NavBar = () => {
 
   function clearContent() {
     setData(null);
-    setType(null);
-    setValue(null);
+    setType("");
+    setValue("");
     console.log("cleared content");
   }
   const { setValue, setData, fetchData, setType, setLoading } =
@@ -36,7 +36,7 @@ const NavBar = () => {
           <Link to="/">Gutendex</Link>
         </h1>
         <input
-          id="search-field"
+          id="searchField"
           type="text"
           placeholder="Search Author or Book name"
         />
@@ -46,7 +46,7 @@ const NavBar = () => {
             clearContent();
             setLoading(true);
             setType("search");
-            setValue(document.getElementById("search-field").value);
+            setValue(searchField.value);
             fetchData();
             console.log("TRYKK");
           }}
