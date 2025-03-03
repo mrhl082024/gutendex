@@ -6,7 +6,7 @@ export const ContextWindow = ({ children }) => {
   const [value, setValue] = useState();
   const [error, setError] = useState(null);
   const [data, setData] = useState();
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState();
   const [type, setType] = useState(null);
 
   const fetchData = async () => {
@@ -24,9 +24,10 @@ export const ContextWindow = ({ children }) => {
     }
   };
   useEffect(() => {
+    if (type === "" || value === undefined) return;
     if (value === "" || value === undefined) return;
     fetchData();
-  }, [value]);
+  }, [type, value]);
 
   return (
     <Context.Provider

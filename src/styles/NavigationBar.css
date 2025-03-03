@@ -19,7 +19,7 @@
 #dropdown-name {
   text-decoration: none;
 }
-#searchField {
+#search-field {
   width: 200px;
   text-align: center;
   height: 30px;
@@ -30,4 +30,7 @@
   border: 1px solid black;
   height: 30px;
   width: 60px;
+}
+a {
+  text-decoration: none;
 }

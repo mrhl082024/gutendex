@@ -33,10 +33,10 @@ const NavBar = () => {
     <div id="navigationbar-card">
       <section id="top-card">
         <h1 id="title" onClick={() => setData(null)}>
-          Gutendex
+          <Link to="/">Gutendex</Link>
         </h1>
         <input
-          id="searchField"
+          id="search-field"
           type="text"
           placeholder="Search Author or Book name"
         />
@@ -46,7 +46,7 @@ const NavBar = () => {
             clearContent();
             setLoading(true);
             setType("search");
-            setValue(searchField.value);
+            setValue(document.getElementById("search-field").value);
             fetchData();
             console.log("TRYKK");
           }}
@@ -62,22 +62,22 @@ const NavBar = () => {
           <ul id="drop-ul">
             {categoryArr.map((name, i) => (
               <li id="dropdown-content" key={i}>
-                <button
-                  id="dropdown-btn"
-                  value={name}
-                  onClick={() => {
-                    clearContent();
-                    setLoading(true);
-                    setType("topic");
-                    setValue(name);
-                    fetchData();
-                    // console.log("TRYKK");
-                  }}
-                >
-                  <Link id="dropdown-name" to="/ShowBooks">
+                <Link to="ShowBooks">
+                  <button
+                    id="dropdown-btn"
+                    value={name}
+                    onClick={() => {
+                      clearContent();
+                      setLoading(true);
+                      setType("topic");
+                      setValue(name);
+                      fetchData();
+                      // console.log("TRYKK");
+                    }}
+                  >
                     {name}
-                  </Link>
-                </button>
+                  </button>
+                </Link>
               </li>
             ))}
           </ul>
