@@ -1,7 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import "../styles/NavigationBar.css";
 import { Context } from "./ContextWindow";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 
 const NavBar = () => {
   const categoryArr = [
@@ -22,21 +22,34 @@ const NavBar = () => {
 
   function clearContent() {
     setData(null);
+    setValue(null);
   }
 
-  const { setCategory, error, data, setData, fetchData, loading, setLoading } =
+  const { setValue, error, data, setData, fetchData, loading, setLoading } =
     useContext(Context);
 
   return (
     <div id="navigationbar-card">
-      <h1 id="title" onClick={() => setData(null)}>
-        Gutendex
-      </h1>
-      <input
-        id="search-field"
-        type="search"
-        placeholder="Search Author or Book name"
-      />
+      <section id="top-card">
+        <h1 id="title" onClick={() => setData(null)}>
+          Gutendex
+        </h1>
+        <input
+          id="searchField"
+          type="text"
+          placeholder="Search Author or Book name"
+        />
+        <button
+          id="search-btn"
+          onClick={() => {
+            clearContent();
+            searchBook();
+            console.log("TRYKK");
+          }}
+        >
+          Search
+        </button>
+      </section>
       <section>
         <div id="dropdown">
           Categories:
@@ -49,7 +62,7 @@ const NavBar = () => {
                   onClick={() => {
                     setLoading(true);
                     setData(null);
-                    setCategory(name);
+                    setValue(name);
                     fetchData();
                     // console.log("TRYKK");
                   }}

@@ -6,10 +6,6 @@ const ShowBooks = () => {
 
   return (
     <>
-      <div>
-        <button className="nav-button">Previous</button>
-        <button className="nav-button">Next</button>
-      </div>
       <section>
         <span id="showbooks-card">
           {loading === true ? <p>Loading...</p> : null}

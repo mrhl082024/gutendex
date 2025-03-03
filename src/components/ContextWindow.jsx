@@ -3,15 +3,16 @@ import { createContext, useEffect, useState } from "react";
 export const Context = createContext();
 
 export const ContextWindow = ({ children }) => {
-  const [category, setCategory] = useState();
+  const [value, setValue] = useState();
   const [error, setError] = useState(null);
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
+  const [type, setType] = useState(null);
 
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `https://gutendex.com/books?topic=${category}`
+        `https://gutendex.com/books?${type}=${value}`
       );
       const result = await response.json();
       setData(result);
@@ -23,16 +24,15 @@ export const ContextWindow = ({ children }) => {
     }
   };
   useEffect(() => {
-    if (category === "" || category === undefined) return;
+    if (type === "" || type === undefined) return;
+    if (value === "" || value === undefined) return;
     fetchData();
-  }, [category]);
-
-  function runFunc() {}
+  }, [type, value]);
 
   return (
     <Context.Provider
       value={{
-        setCategory,
+        setValue,
         error,
         data,
         setData,
