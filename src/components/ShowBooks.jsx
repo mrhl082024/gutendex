@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Context } from "./ContextWindow";
+import { Link, Outlet } from "react-router-dom";
 
 const ShowBooks = () => {
   const {
@@ -55,15 +56,18 @@ const ShowBooks = () => {
                     console.log("click");
                   }}
                 >
-                  <p>{book.title} </p>
-                  <img src={book.formats["image/jpeg"]} alt="" />
-                  {book.authors.map((author) => (
-                    <p>{author.name} </p>
-                  ))}
+                  <Link to="/Book">
+                    <p>{book.title} </p>
+                    <img src={book.formats["image/jpeg"]} alt="" />
+                    {book.authors.map((author) => (
+                      <p>{author.name} </p>
+                    ))}
+                  </Link>
                 </div>
               </>
             ))}
       </div>
+      <Outlet />
     </>
   );
 };

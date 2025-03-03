@@ -4,6 +4,7 @@ import Homepage from "./components/Homepage.jsx";
 import ShowBooks from "./components/ShowBooks.jsx";
 import NavigationBar from "./components/NavigationBar.jsx";
 import Book from "./components/Book.jsx";
+import FavoriteBooks from "./components/FavoriteBooks.jsx";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
           <Route index element={<Homepage />} />
           <Route path="Showbooks" element={<ShowBooks />} />
           <Route path="Book" element={<Book />} />
+          <Route path="FavoriteBook" element={<FavoriteBooks />} />
         </Route>
       </Routes>
     </BrowserRouter>
