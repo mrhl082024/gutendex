@@ -7,37 +7,38 @@ function Book() {
 
   return (
     <>
-      <section>
+      <div id="book-card">
+        {loading === true ? <p>Loading...</p> : null}
         {data.results.map((book) => (
           <>
-            <h1>{book.title} </h1>
-            <img src={book.formats["image/jpeg"]} alt="Picture of book cover" />
+            <section>
+              <button>Favorite</button>
+              <h1>{book.title} </h1>
+              <img
+                src={book.formats["image/jpeg"]}
+                alt="Picture of book cover"
+              />
+            </section>
+            <section>
+              <ul>
+                {book.bookshelves.map((category) => {
+                  <li>{category}</li>;
+                })}
+              </ul>
+              <ul>
+                {book.authors.map((author) => {
+                  <li>{author}</li>;
+                })}
+                {book.languages.map((languages) => {
+                  <li>{languages} </li>;
+                })}
+                <li>{book.download_count}</li>
+              </ul>
+              <a href={book.formats["text/html"]}></a>
+            </section>
           </>
         ))}
-        <button>favorite</button>
-        <h1>title</h1>
-        <img src="" alt="" />
-        <ul>
-          <li>
-            <p>author</p>
-          </li>
-          <li>
-            <p>category</p>
-          </li>
-          <li>
-            <p>language</p>
-          </li>
-          <li>
-            <p>downloads</p>
-          </li>
-          <li>
-            <a href="">link to web book</a>
-          </li>
-        </ul>
-      </section>
-      <section>
-        <p>summary</p>
-      </section>
+      </div>
     </>
   );
 }
