@@ -38,7 +38,9 @@ const Book = () => {
                     })}
                     <li>{book.download_count}</li>
                   </ul>
-                  <a href={book.formats["text/html"]}></a>
+                  <a href={book.formats["text/html"]} target="_blank">
+                    Link to Web book
+                  </a>
                 </section>
               </>
             ))}

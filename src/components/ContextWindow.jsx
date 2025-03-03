@@ -9,6 +9,7 @@ export const ContextWindow = ({ children }) => {
   const [loading, setLoading] = useState();
   const [type, setType] = useState(null);
   const [page, setPage] = useState(1);
+  const [favorite, setFavorite] = useState();
 
   if (page < 1) {
     setPage(1);
@@ -62,6 +63,8 @@ export const ContextWindow = ({ children }) => {
         page,
         setPage,
         clearContent,
+        favorite,
+        setFavorite,
       }}
     >
       {children}
