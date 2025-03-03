@@ -14,7 +14,7 @@ export default function App() {
           <Route index element={<Homepage />} />
           <Route path="Showbooks" element={<ShowBooks />} />
           <Route path="Book" element={<Book />} />
-          <Route path="FavoriteBook" element={<FavoriteBooks />} />
+          <Route path="FavoriteBooks" element={<FavoriteBooks />} />
         </Route>
       </Routes>
     </BrowserRouter>

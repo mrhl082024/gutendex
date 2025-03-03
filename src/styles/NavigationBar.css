@@ -19,18 +19,34 @@
 #dropdown-name {
   text-decoration: none;
 }
+#favorite-btn,
+#search-btn {
+  height: 30px;
+  width: 70px;
+  border: 1px solid black;
+  border-radius: 2px;
+  text-align: center;
+  transition: 0.1s;
+}
+#favorite-btn:hover,
+#search-btn:hover {
+  transform: scale(1.1);
+}
+
 #searchField {
   width: 200px;
   text-align: center;
   height: 30px;
   border-radius: 2px;
   border: 1px solid black;
+  border-left: none;
+  border-right: none;
 }
-#search-btn {
+/* #search-btn {
   border: 1px solid black;
   height: 30px;
-  width: 60px;
-}
+  width: 70px;
+} */
 a {
   text-decoration: none;
 }

@@ -29,6 +29,9 @@ const NavBar = () => {
         <h1 id="title" onClick={() => setData(null)}>
           <Link to="/">Gutendex</Link>
         </h1>
+        <Link to="/FavoriteBooks">
+          <button id="favorite-btn">Favorites</button>
+        </Link>
         <input
           id="searchField"
           type="text"

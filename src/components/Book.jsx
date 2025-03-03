@@ -3,7 +3,7 @@ import { Context } from "./ContextWindow";
 import "../styles/Book.css";
 
 const Book = () => {
-  const { data, loading } = useContext(Context);
+  const { data, loading, setFavorite } = useContext(Context);
 
   return (
     <>
@@ -16,7 +16,13 @@ const Book = () => {
           : data.results.map((book) => (
               <>
                 <section>
-                  <button>Favorite</button>
+                  <button
+                    onClick={() => {
+                      setFavorite((prev) => prev + data);
+                    }}
+                  >
+                    Favorite
+                  </button>
                   <h1>{book.title} </h1>
                   <img
                     src={book.formats["image/jpeg"]}
