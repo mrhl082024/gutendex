@@ -5,6 +5,16 @@ import "../styles/Book.css";
 const Book = () => {
   const { data, loading, favorite, setFavorite } = useContext(Context);
 
+  function addFavorite(book) {
+    if (favorite.map((obj) => obj.id === book.id).includes(true))
+      console.log("its a dupe");
+    else {
+      setFavorite([...favorite, book]);
+      console.log("youre good");
+    }
+  }
+  console.log(favorite);
+
   return (
     <>
       <div id="book-card">
@@ -16,8 +26,7 @@ const Book = () => {
                 <section>
                   <button
                     onClick={() => {
-                      setFavorite((prev) => prev + data);
-                      console.log(favorite);
+                      addFavorite(book);
                     }}
                   >
                     Favorite

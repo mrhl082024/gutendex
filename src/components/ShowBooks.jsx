@@ -15,7 +15,6 @@ const ShowBooks = () => {
     fetchData,
     clearContent,
   } = useContext(Context);
-  console.log(value);
 
   return (
     <>

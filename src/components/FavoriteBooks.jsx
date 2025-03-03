@@ -1,8 +1,8 @@
+import { useContext } from "react";
+import { Context } from "./ContextWindow";
+
 const FavoriteBooks = () => {
-  return (
-    <>
-      <div>test</div>
-    </>
-  );
+  const { favorite } = useContext(Context);
+  return <>{}</>;
 };
 export default FavoriteBooks;
