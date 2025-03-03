@@ -1,4 +1,4 @@
-#dropdown {
+/* #dropdown {
   display: inline-block;
   width: fit-content;
   font-size: 30px;
@@ -38,4 +38,19 @@
 #dropdown-name {
   text-decoration: none;
   background: none;
+} */
+/* TRYING SOMETHING DIFFERENT */
+#navigationbar-card {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+}
+#dropdown {
+  display: flex;
+  flex-direction: column;
+}
+#dropdown-name {
+}
+#dropdown-content {
+  list-style-type: none;
 }

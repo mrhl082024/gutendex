@@ -7,11 +7,11 @@ const ShowBooks = () => {
   return (
     <>
       <div>
-        <button id="prev-page"></button>
-        <button id="next-page"></button>
+        <button className="nav-button">Previous</button>
+        <button className="nav-button">Next</button>
       </div>
       <section>
-        <div id="showbooks-card">
+        <span id="showbooks-card">
           {loading === true ? <p>Loading...</p> : null}
           {data === null || data === undefined
             ? null
@@ -27,7 +27,7 @@ const ShowBooks = () => {
                   </div>
                 </>
               ))}
-        </div>
+        </span>
       </section>
     </>
   );

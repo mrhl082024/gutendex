@@ -39,7 +39,7 @@ const NavBar = () => {
       />
       <section>
         <div id="dropdown">
-          &#10507; Categories:
+          Categories:
           <ul id="drop-ul">
             {categoryArr.map((name, i) => (
               <li id="dropdown-content" key={i}>
@@ -51,7 +51,7 @@ const NavBar = () => {
                     setData(null);
                     setCategory(name);
                     fetchData();
-                    console.log("TRYKK");
+                    // console.log("TRYKK");
                   }}
                 >
                   <Link id="dropdown-name" to="/ShowBooks">
