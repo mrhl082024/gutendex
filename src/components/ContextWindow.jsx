@@ -9,8 +9,17 @@ export const ContextWindow = ({ children }) => {
   const [loading, setLoading] = useState();
   const [type, setType] = useState(null);
   const [page, setPage] = useState(1);
+
   if (page < 1) {
     setPage(1);
+  }
+
+  function clearContent() {
+    setData(null);
+    setPage(null);
+    setType(null);
+    setValue(null);
+    console.log("cleared content");
   }
 
   const fetchData = async () => {
@@ -33,14 +42,16 @@ export const ContextWindow = ({ children }) => {
     }
   };
   useEffect(() => {
+    if (page === null || page === undefined) return;
     if (type === "" || value === undefined) return;
     if (value === "" || value === undefined) return;
     fetchData();
-  }, [type, value, page]);
+  }, [page, type, value]);
 
   return (
     <Context.Provider
       value={{
+        value,
         setValue,
         setType,
         data,
@@ -50,6 +61,7 @@ export const ContextWindow = ({ children }) => {
         setLoading,
         page,
         setPage,
+        clearContent,
       }}
     >
       {children}

@@ -2,7 +2,19 @@ import { useContext } from "react";
 import { Context } from "./ContextWindow";
 
 const ShowBooks = () => {
-  const { data, loading, page, setPage } = useContext(Context);
+  const {
+    data,
+    loading,
+    page,
+    setPage,
+    type,
+    setType,
+    value,
+    setValue,
+    fetchData,
+    clearContent,
+  } = useContext(Context);
+  console.log(value);
 
   return (
     <>
@@ -34,7 +46,15 @@ const ShowBooks = () => {
           ? null
           : data.results.map((book) => (
               <>
-                <div id="showbook-card">
+                <div
+                  id="showbook-card"
+                  onClick={() => {
+                    clearContent();
+                    setType("ids");
+                    setValue(book.id.toString());
+                    console.log("click");
+                  }}
+                >
                   <p>{book.title} </p>
                   <img src={book.formats["image/jpeg"]} alt="" />
                   {book.authors.map((author) => (

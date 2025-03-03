@@ -20,13 +20,7 @@ const NavBar = () => {
     "Philosophy",
   ];
 
-  function clearContent() {
-    setData(null);
-    setType("");
-    setValue("");
-    console.log("cleared content");
-  }
-  const { setValue, setData, fetchData, setType, setLoading } =
+  const { setValue, setData, fetchData, setType, setLoading, clearContent } =
     useContext(Context);
 
   return (
@@ -68,10 +62,8 @@ const NavBar = () => {
                     value={name}
                     onClick={() => {
                       clearContent();
-                      setLoading(true);
                       setType("topic");
                       setValue(name);
-                      fetchData();
                       // console.log("TRYKK");
                     }}
                   >
