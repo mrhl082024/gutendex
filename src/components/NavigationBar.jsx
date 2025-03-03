@@ -1,7 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import "../styles/NavigationBar.css";
 import { Context } from "./ContextWindow";
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 
 const NavBar = () => {
   const categoryArr = [
@@ -51,7 +51,9 @@ const NavBar = () => {
             console.log("TRYKK");
           }}
         >
-          Search
+          <Link id="dropdown-name" to="/ShowBooks">
+            Search
+          </Link>
         </button>
       </section>
       <section>

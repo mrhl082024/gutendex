@@ -6,25 +6,22 @@ const ShowBooks = () => {
 
   return (
     <>
-      <section>
-        <span id="showbooks-card">
-          {loading === true ? <p>Loading...</p> : null}
-          {data === null || data === undefined
-            ? null
-            : data.results.map((book) => (
-                <>
-                  <div id="showbook-card">
-                    <p>{book.title} </p>
-                    <img src={book.formats["image/jpeg"]} alt="" />
-                    {console.log(book.formats["image/jpeg"])}
-                    {book.authors.map((author) => (
-                      <p>{author.name} </p>
-                    ))}
-                  </div>
-                </>
-              ))}
-        </span>
-      </section>
+      <div id="showbooks-card">
+        {loading === true ? <p>Loading...</p> : null}
+        {data === null || data === undefined
+          ? null
+          : data.results.map((book) => (
+              <>
+                <div id="showbook-card">
+                  <p>{book.title} </p>
+                  <img src={book.formats["image/jpeg"]} alt="" />
+                  {book.authors.map((author) => (
+                    <p>{author.name} </p>
+                  ))}
+                </div>
+              </>
+            ))}
+      </div>
     </>
   );
 };

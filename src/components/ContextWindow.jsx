@@ -14,8 +14,6 @@ export const ContextWindow = ({ children }) => {
       const response = await fetch(
         `https://gutendex.com/books?${type}=${value.replace(" ", "%20")}`
       );
-      console.log(response);
-
       const result = await response.json();
       setData(result);
       console.log(result);
