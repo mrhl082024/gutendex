@@ -3,14 +3,12 @@ import { Context } from "./ContextWindow";
 import "../styles/Book.css";
 
 const Book = () => {
-  const { data, loading, setFavorite } = useContext(Context);
+  const { data, loading, favorite, setFavorite } = useContext(Context);
 
   return (
     <>
       <div id="book-card">
         {loading === true ? <p>Loading...</p> : null}
-        {console.log(data)}
-
         {data === null || data === undefined
           ? null
           : data.results.map((book) => (
@@ -19,6 +17,7 @@ const Book = () => {
                   <button
                     onClick={() => {
                       setFavorite((prev) => prev + data);
+                      console.log(favorite);
                     }}
                   >
                     Favorite
