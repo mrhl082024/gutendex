@@ -31,14 +31,34 @@ const Book = () => {
                       src={book.formats["image/jpeg"]}
                       alt="cover picture of book"
                     />
-                    <p>{book.download_count}</p>
-                    <p>category</p>
-                    <p>language</p>
+                    <ul>
+                      Authors:
+                      {book.authors.map((authors) => (
+                        <li>{authors.name}</li>
+                      ))}
+                    </ul>
+                    <ul>
+                      Bookshelves:
+                      {book.bookshelves.map((categories) => (
+                        <li>{categories} </li>
+                      ))}
+                    </ul>
+                    <ul>
+                      Downloads:
+                      <li>{book.download_count}</li>
+                    </ul>
+                    <ul>
+                      Languages:
+                      {book.languages.map((languages) => (
+                        <li>{languages}</li>
+                      ))}
+                    </ul>
                     <a href={book.formats["text/html"]} target="_blank">
                       web book link
                     </a>
                   </div>
                 </section>
+                <section></section>
               </>
             ))}
       </div>
