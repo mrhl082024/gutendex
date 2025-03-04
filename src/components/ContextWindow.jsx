@@ -35,7 +35,6 @@ export const ContextWindow = ({ children }) => {
       const result = await response.json();
       setData(result);
       console.log(result);
-      console.log("DATA");
     } catch (err) {
       setError(err);
     } finally {

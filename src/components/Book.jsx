@@ -13,8 +13,6 @@ const Book = () => {
       console.log("youre good");
     }
   }
-  console.log(favorite);
-
   return (
     <>
       <div id="book-card">
@@ -23,9 +21,15 @@ const Book = () => {
           ? null
           : data.results.map((book) => (
               <>
-                <section>
-                  <div>
-                    <button>Favorite</button>
+                <div id="book-card">
+                  <section id="book-info">
+                    <button
+                      onClick={() => {
+                        addFavorite(book);
+                      }}
+                    >
+                      Favorite
+                    </button>
                     <h1>{book.title} </h1>
                     <img
                       src={book.formats["image/jpeg"]}
@@ -56,9 +60,11 @@ const Book = () => {
                     <a href={book.formats["text/html"]} target="_blank">
                       web book link
                     </a>
-                  </div>
-                </section>
-                <section></section>
+                  </section>
+                  <section id="summary">
+                    <p>{book.summaries[0]} </p>
+                  </section>
+                </div>
               </>
             ))}
       </div>
