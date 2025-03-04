@@ -24,51 +24,19 @@ const Book = () => {
           : data.results.map((book) => (
               <>
                 <section>
-                  <button
-                    onClick={() => {
-                      addFavorite(book);
-                    }}
-                  >
-                    Favorite
-                  </button>
-                  <h1>{book.title} </h1>
-                  <img
-                    src={book.formats["image/jpeg"]}
-                    alt="Picture of book cover"
-                  />
-                </section>
-                <section>
                   <div>
-                    <ul id="categories">
-                      {book.bookshelves.map((category) => (
-                        <li>{category}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <ul id="authors">
-                      {book.authors.map((author) => (
-                        <li>{author}test</li>
-                      ))}
-                      {book.languages.map((languages) => (
-                        <li>
-                          <p>{languages} test</p>
-                        </li>
-                      ))}
-                      <li>{book.download_count}</li>
-                    </ul>
-                  </div>
-                  <a href={book.formats["text/html"]} target="_blank">
-                    Link to Web book
-                  </a>
-                </section>
-                <section>
-                  <div>
-                    <p>
-                      {book.summaries.map((summaries) => (
-                        <p>{summaries} </p>
-                      ))}
-                    </p>
+                    <button>Favorite</button>
+                    <h1>{book.title} </h1>
+                    <img
+                      src={book.formats["image/jpeg"]}
+                      alt="cover picture of book"
+                    />
+                    <p>{book.download_count}</p>
+                    <p>category</p>
+                    <p>language</p>
+                    <a href={book.formats["text/html"]} target="_blank">
+                      web book link
+                    </a>
                   </div>
                 </section>
               </>
@@ -77,4 +45,5 @@ const Book = () => {
     </>
   );
 };
+
 export default Book;
