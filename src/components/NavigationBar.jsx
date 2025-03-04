@@ -54,10 +54,8 @@ const NavBar = () => {
             id="searchField"
             type="text"
             placeholder="Search Author or Book name"
-            onKeyUp={(e) => {
-              e.key === "Enter" ? handleClick() : null;
-            }}
           />
+
           <Link to="/ShowBooks">
             <button
               id="search-btn"
