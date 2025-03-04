@@ -38,23 +38,38 @@ const Book = () => {
                   />
                 </section>
                 <section>
-                  <ul id="categories">
-                    {book.bookshelves.map((category) => {
-                      <li>{category}</li>;
-                    })}
-                  </ul>
-                  <ul id="authors">
-                    {book.authors.map((author) => {
-                      <li>{author}</li>;
-                    })}
-                    {book.languages.map((languages) => {
-                      <li>{languages} </li>;
-                    })}
-                    <li>{book.download_count}</li>
-                  </ul>
+                  <div>
+                    <ul id="categories">
+                      {book.bookshelves.map((category) => (
+                        <li>{category}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <ul id="authors">
+                      {book.authors.map((author) => (
+                        <li>{author}test</li>
+                      ))}
+                      {book.languages.map((languages) => (
+                        <li>
+                          <p>{languages} test</p>
+                        </li>
+                      ))}
+                      <li>{book.download_count}</li>
+                    </ul>
+                  </div>
                   <a href={book.formats["text/html"]} target="_blank">
                     Link to Web book
                   </a>
+                </section>
+                <section>
+                  <div>
+                    <p>
+                      {book.summaries.map((summaries) => (
+                        <p>{summaries} </p>
+                      ))}
+                    </p>
+                  </div>
                 </section>
               </>
             ))}
