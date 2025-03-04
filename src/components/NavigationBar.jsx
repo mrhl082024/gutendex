@@ -32,12 +32,6 @@ const NavBar = () => {
     console.log("TRYKK");
   }
 
-  // document.getElementById("searchField").addEventListener("keyUp", (e) => {
-  //   if (e.key === "Enter") {
-  //     document.getElementById("search-btn").click();
-  //   }
-  // });
-
   return (
     <div id="navigationbar-card">
       <section id="top-card">
@@ -55,7 +49,6 @@ const NavBar = () => {
             type="text"
             placeholder="Search Author or Book name"
           />
-
           <Link to="/ShowBooks">
             <button
               id="search-btn"
