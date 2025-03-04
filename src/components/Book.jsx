@@ -57,7 +57,10 @@ const Book = () => {
                         <li>{languages}</li>
                       ))}
                     </ul>
-                    <a href={book.formats["text/html"]} target="_blank">
+                    <a
+                      href={book.formats["text/plain; charset=us-ascii"]}
+                      target="_blank"
+                    >
                       web book link
                     </a>
                   </section>
