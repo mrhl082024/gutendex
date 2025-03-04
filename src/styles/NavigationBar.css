@@ -1,11 +1,12 @@
-#navigation-card {
-}
 #top-card {
+  display: inline-block;
   margin: 1rem;
+  min-width: fit-content;
 }
 #title {
   font-size: 50px;
   transition: 0.1s;
+  justify-self: center;
 }
 #title:hover {
   color: rgb(80, 80, 230);
@@ -14,7 +15,7 @@
 #searchField,
 #search-btn {
   height: 40px;
-  width: 70px;
+  width: 80px;
   border: 1px solid black;
   border-radius: 2px;
   text-align: center;
@@ -24,13 +25,20 @@
 #favorite-btn:hover,
 #search-btn:hover {
   transform: scale(1.1);
+  background-color: rgb(80, 80, 230);
+}
+#favorite-btn {
+  border-radius: 2rem 0 0 2rem;
+}
+#search-btn {
+  border-radius: 0 2rem 2rem 0;
 }
 #searchField {
   width: 200px;
   border-left: none;
   border-right: none;
 }
-
+/*NEW SECTION*/
 #category-list {
   display: inline-block;
   width: fit-content;

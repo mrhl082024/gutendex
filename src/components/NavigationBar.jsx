@@ -46,34 +46,29 @@ const NavBar = () => {
             Gutendex
           </h1>
         </Link>
-        <Link to="/FavoriteBooks">
-          <button id="favorite-btn">Favorites</button>
-        </Link>
-        <input
-          id="searchField"
-          type="text"
-          placeholder="Search Author or Book name"
-          onKeyUp={(e) => {
-            e.key === "Enter" ? handleClick() : null;
-          }}
-        />
-        <button
-          id="search-btn"
-          onClick={() => {
-            handleClick();
-            // clearContent();
-            // setLoading(true);
-            // setType("search");
-            // setValue(searchField.value);
-            // fetchData();
-            // document.getElementById("searchField").value = "";
-            // console.log("TRYKK");
-          }}
-        >
-          <Link id="dropdown-name" to="/ShowBooks">
-            Search
+        <div id="btn-search-card">
+          <Link to="/FavoriteBooks">
+            <button id="favorite-btn">Favorites</button>
           </Link>
-        </button>
+          <input
+            id="searchField"
+            type="text"
+            placeholder="Search Author or Book name"
+            onKeyUp={(e) => {
+              e.key === "Enter" ? handleClick() : null;
+            }}
+          />
+          <Link to="/ShowBooks">
+            <button
+              id="search-btn"
+              onClick={() => {
+                handleClick();
+              }}
+            >
+              Search
+            </button>
+          </Link>
+        </div>
       </section>
       <section id="category-card">
         <ul id="category-list">
