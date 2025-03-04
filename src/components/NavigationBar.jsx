@@ -23,12 +23,29 @@ const NavBar = () => {
   const { setValue, setData, fetchData, setType, setLoading, clearContent } =
     useContext(Context);
 
+  function handleClick() {
+    clearContent();
+    setLoading(true);
+    setType("search");
+    setValue(searchField.value);
+    document.getElementById("searchField").value = "";
+    console.log("TRYKK");
+  }
+
+  // document.getElementById("searchField").addEventListener("keyUp", (e) => {
+  //   if (e.key === "Enter") {
+  //     document.getElementById("search-btn").click();
+  //   }
+  // });
+
   return (
     <div id="navigationbar-card">
       <section id="top-card">
-        <h1 id="title" onClick={() => setData(null)}>
-          <Link to="/">Gutendex</Link>
-        </h1>
+        <Link to="/">
+          <h1 id="title" onClick={() => setData(null)}>
+            Gutendex
+          </h1>
+        </Link>
         <Link to="/FavoriteBooks">
           <button id="favorite-btn">Favorites</button>
         </Link>
@@ -36,16 +53,21 @@ const NavBar = () => {
           id="searchField"
           type="text"
           placeholder="Search Author or Book name"
+          onKeyUp={(e) => {
+            e.key === "Enter" ? handleClick() : null;
+          }}
         />
         <button
           id="search-btn"
           onClick={() => {
-            clearContent();
-            setLoading(true);
-            setType("search");
-            setValue(searchField.value);
-            fetchData();
-            console.log("TRYKK");
+            handleClick();
+            // clearContent();
+            // setLoading(true);
+            // setType("search");
+            // setValue(searchField.value);
+            // fetchData();
+            // document.getElementById("searchField").value = "";
+            // console.log("TRYKK");
           }}
         >
           <Link id="dropdown-name" to="/ShowBooks">
@@ -53,30 +75,27 @@ const NavBar = () => {
           </Link>
         </button>
       </section>
-      <section>
-        <div id="dropdown">
+      <section id="category-card">
+        <ul id="category-list">
           Categories:
-          <ul id="drop-ul">
-            {categoryArr.map((name, i) => (
-              <li id="dropdown-content" key={i}>
-                <Link to="ShowBooks">
-                  <button
-                    id="dropdown-btn"
-                    value={name}
-                    onClick={() => {
-                      clearContent();
-                      setType("topic");
-                      setValue(name);
-                      // console.log("TRYKK");
-                    }}
-                  >
-                    {name}
-                  </button>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+          {categoryArr.map((name, i) => (
+            <li>
+              <Link to="ShowBooks">
+                <button
+                  id="category-btn"
+                  value={name}
+                  onClick={() => {
+                    clearContent();
+                    setType("topic");
+                    setValue(name);
+                  }}
+                >
+                  {name}
+                </button>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
       <Outlet />
     </div>
