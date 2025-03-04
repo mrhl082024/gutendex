@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Context } from "./ContextWindow";
 import { Link, Outlet } from "react-router-dom";
+import "../styles/ShowBooks.css";
 
 const ShowBooks = () => {
   const {

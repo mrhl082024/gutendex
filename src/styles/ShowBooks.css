@@ -1,0 +1,8 @@
+#prev-page,
+#next-page,
+#page-counter {
+  height: 30px;
+  width: 50px;
+  border: 1px solid black;
+  text-align: center;
+}
