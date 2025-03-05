@@ -6,9 +6,10 @@
 #title {
   font-size: 50px;
   transition: 0.1s;
+  color: rgb(80, 80, 230);
 }
 #title:hover {
-  color: rgb(80, 80, 230);
+  color: white;
 }
 #favorite-btn,
 #searchField,
