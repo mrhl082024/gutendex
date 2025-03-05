@@ -47,23 +47,27 @@ const ShowBooks = () => {
           ? null
           : data.results.map((book) => (
               <>
-                <div
-                  id="showbook-card"
-                  onClick={() => {
-                    clearContent();
-                    setType("ids");
-                    setValue(book.id.toString());
-                    console.log("click");
-                  }}
-                >
-                  <Link to="/Book">
-                    <p>{book.title} </p>
-                    <img src={book.formats["image/jpeg"]} alt="" />
+                <Link to="/Book">
+                  <div
+                    id="showbook-card"
+                    onClick={() => {
+                      clearContent();
+                      setType("ids");
+                      setValue(book.id.toString());
+                      console.log("click");
+                    }}
+                  >
+                    <p id="book-title">{book.title} </p>
+                    <img
+                      id="book-img"
+                      src={book.formats["image/jpeg"]}
+                      alt=""
+                    />
                     {book.authors.map((author) => (
-                      <p>{author.name} </p>
+                      <p id="book-authors">Authors: {author.name} </p>
                     ))}
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               </>
             ))}
       </div>

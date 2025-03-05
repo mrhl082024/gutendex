@@ -1,6 +1,9 @@
 #btn-card {
   display: flex;
+  justify-content: center;
+  margin: 1rem 0 1rem 0;
 }
+
 #prev-page,
 #next-page,
 #page-counter {
@@ -9,4 +12,33 @@
   border: 1px solid black;
   text-align: center;
   line-height: 30px;
+  transition: 0.1s;
+}
+#page-counter {
+  border-left: none;
+  border-right: none;
+}
+#prev-page {
+  border-radius: 2rem 0 0 2rem;
+}
+#next-page {
+  border-radius: 0 2rem 2rem 0;
+}
+#prev-page:hover,
+#next-page:hover {
+  transform: scale(1.1);
+  background-color: rgb(80, 80, 230);
+}
+#showbook-card {
+  border-top: 2px solid rgb(80, 80, 230);
+  transition: 0.1s;
+  height: 360px;
+  text-align: center;
+  margin: 6px 0 6px 0;
+}
+#showbook-card:hover {
+  transform: scale(1.01);
+}
+#book-title {
+  font-size: 30px;
 }
