@@ -15,36 +15,25 @@ const Book = () => {
   }
   return (
     <>
-      <div id="book-card">
-        {loading === true ? <p>Loading...</p> : null}
+      <div>
+        {loading === true ? <p id="loading">Loading...</p> : null}
         {data === null || data === undefined
           ? null
           : data.results.map((book) => (
               <>
                 <div id="book-card">
-                  <section id="book-info">
-                    <button
-                      onClick={() => {
-                        addFavorite(book);
-                      }}
-                    >
-                      Favorite
-                    </button>
+                  <section id="book-cover-info">
                     <h1>{book.title} </h1>
                     <img
                       src={book.formats["image/jpeg"]}
                       alt="cover picture of book"
                     />
+                  </section>
+                  <section id="book-details">
                     <ul>
                       Authors:
                       {book.authors.map((authors) => (
                         <li>{authors.name}</li>
-                      ))}
-                    </ul>
-                    <ul>
-                      Bookshelves:
-                      {book.bookshelves.map((categories) => (
-                        <li>{categories} </li>
                       ))}
                     </ul>
                     <ul>
@@ -57,12 +46,30 @@ const Book = () => {
                         <li>{languages}</li>
                       ))}
                     </ul>
-                    <a
-                      href={book.formats["text/plain; charset=us-ascii"]}
-                      target="_blank"
+                    <button id="read-btn">
+                      <a
+                        href={book.formats["text/plain; charset=us-ascii"]}
+                        target="_blank"
+                      >
+                        Read
+                      </a>
+                    </button>
+                    <button
+                      id="add-favorite-btn"
+                      onClick={() => {
+                        addFavorite(book);
+                      }}
                     >
-                      web book link
-                    </a>
+                      Favorite
+                    </button>
+                  </section>
+                  <section id="bookshelves">
+                    <ul>
+                      Bookshelves:
+                      {book.bookshelves.map((categories) => (
+                        <li>{categories} </li>
+                      ))}
+                    </ul>
                   </section>
                 </div>
               </>

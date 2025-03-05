@@ -1,0 +1,28 @@
+#book-card {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin: 1rem;
+  font-size: 20px;
+}
+#book-cover-info {
+  width: 300px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+#book-details {
+  width: fit-content;
+}
+button {
+  width: 80px;
+  height: 30px;
+  border: 1px solid black;
+  transition: 0.1s;
+}
+button:hover {
+  transform: scale(1.1);
+  background-color: rgb(80, 80, 230);
+}
+a {
+  background-color: transparent;
+}
