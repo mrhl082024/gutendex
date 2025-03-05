@@ -64,9 +64,6 @@ const Book = () => {
                       web book link
                     </a>
                   </section>
-                  <section id="summary">
-                    <p>{book.summaries[0]} </p>
-                  </section>
                 </div>
               </>
             ))}

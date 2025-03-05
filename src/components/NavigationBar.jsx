@@ -62,8 +62,8 @@ const NavBar = () => {
         </div>
       </section>
       <section id="category-card">
+        Categories:
         <ul id="category-list">
-          Categories:
           {categoryArr.map((name, i) => (
             <li>
               <Link to="ShowBooks">

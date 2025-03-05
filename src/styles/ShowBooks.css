@@ -1,3 +1,6 @@
+#btn-card {
+  display: flex;
+}
 #prev-page,
 #next-page,
 #page-counter {
@@ -5,4 +8,5 @@
   width: 50px;
   border: 1px solid black;
   text-align: center;
+  line-height: 30px;
 }

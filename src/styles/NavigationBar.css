@@ -1,12 +1,11 @@
 #top-card {
-  display: inline-block;
   margin: 1rem;
-  min-width: fit-content;
+  width: fit-content;
+  justify-items: center;
 }
 #title {
   font-size: 50px;
   transition: 0.1s;
-  justify-self: center;
 }
 #title:hover {
   color: rgb(80, 80, 230);
@@ -41,22 +40,20 @@
 /*NEW SECTION*/
 #category-card {
   width: fit-content;
-  display: flex;
-  flex-direction: column;
   margin-left: 1rem;
+  font-size: 30px;
 }
 #category-list {
   font-size: 30px;
-  list-style-type: none;
-  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
 }
 li {
   list-style-type: none;
-  text-decoration: none;
 }
 #category-btn {
-  width: 136px;
-  height: 40px;
+  width: 120px;
+  height: 30px;
   font-size: 20px;
   margin: 4px 0 4px 0;
   transition: 0.1s;
@@ -67,27 +64,6 @@ li {
   transform: scale(1.1);
   background-color: rgb(80, 80, 230);
 }
-
-/* #category-list {
-  display: inline-block;
-  width: fit-content;
-  font-size: 30px;
-  margin: 10px;
-}
-#category-btn {
-  height: 30px;
-  width: 120px;
-  font-size: 20px;
-  transition: 0.1s;
-  list-style-type: none;
-  border: 1px solid black;
-  border-radius: 2px;
-}
-#category-btn:hover {
-  transform: scale(1.1);
-  background-color: rgb(80, 80, 230);
-}
-*/
 a {
   text-decoration: none;
 }
