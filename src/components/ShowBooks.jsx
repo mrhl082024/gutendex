@@ -63,9 +63,11 @@ const ShowBooks = () => {
                       src={book.formats["image/jpeg"]}
                       alt=""
                     />
-                    {book.authors.map((author) => (
-                      <p id="book-authors">Authors: {author.name} </p>
-                    ))}
+                    <ul id="author-list">
+                      {book.authors.map((author) => (
+                        <li id="book-authors">Authors: {author.name} </li>
+                      ))}
+                    </ul>
                   </div>
                 </Link>
               </>
